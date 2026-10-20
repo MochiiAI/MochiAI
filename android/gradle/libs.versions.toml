@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.2"
+agp = "8.10.1"
 kotlin = "2.0.20"
 ksp = "2.0.20-1.0.25"
 coreKtx = "1.13.1"
@@ -13,7 +13,7 @@ kotlinxSerialization = "1.7.3"
 kotlinxCoroutines = "1.9.0"
 securityCrypto = "1.1.0-alpha06"
 lottie = "6.5.2"
-rive = "1.0.22"
+rive = "11.9.2"
 datastore = "1.1.1"
 junit = "4.13.2"
 androidxJunit = "1.2.1"
@@ -41,7 +41,7 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
-rive-android = { group = "app.rive.runtime", name = "rive-android", version.ref = "rive" }
+rive-android = { group = "app.rive", name = "rive-android", version.ref = "rive" }
 androidx-datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }

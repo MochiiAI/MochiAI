@@ -11,7 +11,7 @@ private fun String.escaped(): String =
 
 android {
     namespace = "com.mochi.agent"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.mochi.agent"
