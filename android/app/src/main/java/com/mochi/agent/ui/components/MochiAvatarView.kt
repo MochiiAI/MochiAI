@@ -130,12 +130,10 @@ private fun DrawnHead(
         AgentState.ACTION -> MochiBlueSoft
         else -> Color(0xFF2A2F45)
     }
-    val floatPx = with(density) { float.dp.toPx() }
-
     Box(
         modifier = modifier
             .size(size.dp)
-            .offset(y = floatPx),
+            .offset(y = float.dp),
         contentAlignment = Alignment.Center,
     ) {
         Canvas(modifier = Modifier.size(size.dp)) {

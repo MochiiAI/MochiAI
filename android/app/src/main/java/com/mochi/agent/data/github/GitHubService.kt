@@ -2,12 +2,12 @@ package com.mochi.agent.data.github
 
 import com.mochi.agent.core.SecretConfig
 import com.mochi.agent.core.security.TokenStore
-import com.mochi.agent.data.github.GitHubApi.CreateIssueRequest
-import com.mochi.agent.data.github.GitHubApi.CreatePullRequestRequest
-import com.mochi.agent.data.github.GitHubApi.GitHubIssue
-import com.mochi.agent.data.github.GitHubApi.GitHubPullRequest
-import com.mochi.agent.data.github.GitHubApi.GitHubRepository
-import com.mochi.agent.data.github.GitHubApi.GitHubUser
+import com.mochi.agent.data.github.CreateIssueRequest
+import com.mochi.agent.data.github.CreatePullRequestRequest
+import com.mochi.agent.data.github.GitHubIssue
+import com.mochi.agent.data.github.GitHubPullRequest
+import com.mochi.agent.data.github.GitHubRepository
+import com.mochi.agent.data.github.GitHubUser
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json

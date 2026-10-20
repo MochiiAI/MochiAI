@@ -43,12 +43,12 @@ class MochiViewModel(private val app: MochiApplication) : ViewModel() {
         viewModelScope.launch {
             app.cloudWebSocket.incoming
                 .onEach { envelope -> handleCloudEvent(envelope) }
-                .collect()
+                .collect { }
         }
         viewModelScope.launch {
             com.mochi.agent.proroot.TerminalBus.lines
                 .onEach { line -> _terminalLines.update { (it + line).takeLast(MAX_TERMINAL_LINES) } }
-                .collect()
+                .collect { }
         }
         viewModelScope.launch {
             AgentStateFlow.state.collect { state ->

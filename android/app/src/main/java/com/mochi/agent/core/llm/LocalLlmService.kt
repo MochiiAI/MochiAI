@@ -10,6 +10,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import com.mochi.agent.R
 import com.mochi.agent.core.llm.state.AgentState
 import com.mochi.agent.state.AgentStateFlow
 import kotlinx.coroutines.CoroutineScope
@@ -51,7 +52,7 @@ class LocalLlmService : Service() {
     private val _loaded = MutableStateFlow<String?>(null)
     val loadedModelPath: StateFlow<String?> = _loaded.asStateFlow()
 
-    private val _agentState = MutableStateFlow(AgentStateFlow.current.value)
+    private val _agentState = MutableStateFlow(AgentStateFlow.current)
     val agentState: StateFlow<AgentState> = _agentState.asStateFlow()
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -99,11 +100,10 @@ class LocalLlmService : Service() {
     private fun generate(prompt: String, jobId: Int) {
         _agentState.value = AgentState.THINKING
         scope.launch {
-            val result: LlmResponse =
-                when (val r = MochiNativeBridge.generate(prompt)) {
-                    is Result.Success -> LlmResponse.Text(jobId, r.getOrThrow())
-                    is Result.Failure -> LlmResponse.Error(r.exceptionOrNull()?.message ?: "generation failed")
-                }
+            val result: LlmResponse = MochiNativeBridge.generate(prompt).fold(
+                onSuccess = { LlmResponse.Text(jobId, it) },
+                onFailure = { LlmResponse.Error(it.message ?: "generation failed") },
+            )
             _responses.value = result
             _agentState.value = AgentState.IDLE
         }
