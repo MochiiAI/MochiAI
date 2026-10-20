@@ -12,6 +12,10 @@
 }
 -keep class com.mochi.agent.core.llm.MochiNativeBridge { *; }
 
+# AndroidX Security (Tink) references Error Prone annotations that are only
+# present at compile time. They are CLASS-retention annotations; safe to skip.
+-dontwarn com.google.errorprone.annotations.**
+
 # Retrofit / OkHttp
 -dontwarn okhttp3.internal.platform.**
 -dontwarn org.conscrypt.**
