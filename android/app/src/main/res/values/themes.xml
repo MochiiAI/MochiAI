@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Mochi" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/mochi_black</item>
+        <item name="android:statusBarColor">@color/mochi_black</item>
+        <item name="android:navigationBarColor">@color/mochi_black</item>
+    </style>
+</resources>

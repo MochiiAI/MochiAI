@@ -1,0 +1,53 @@
+# ---- Python / Backend ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+alembic/versions/*.pyc
+
+# ---- Android / Gradle ----
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+*.apk
+*.aab
+*.keystore
+!debug.keystore
+.externalNativeBuild/
+.cxx/
+.cache/
+
+# ---- IDE / OS ----
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# ---- Assets ----
+# Large model weights / binaries are never committed.
+android/app/src/main/assets/preroot/*.tar.gz
+android/app/src/main/assets/preroot/rootfs*/
+android/app/src/main/res/raw/*.json
+android/app/src/main/res/raw/*.riv
+android/app/src/main/cpp/llama.cpp/
+android/app/src/main/cpp/mlc-llm/
+*.so
+# ---- SQLite databases ----
+*.db
+*.sqlite
+*.sqlite3
