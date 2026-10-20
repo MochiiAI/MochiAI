@@ -67,8 +67,4 @@ class TerminalService : Service() {
         scope.cancel()
         super.onDestroy()
     }
-
-    private companion object {
-        const val MAX_LINES = 2000
-    }
 }

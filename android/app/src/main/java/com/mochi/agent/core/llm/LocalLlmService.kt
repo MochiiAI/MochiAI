@@ -99,11 +99,10 @@ class LocalLlmService : Service() {
     private fun generate(prompt: String, jobId: Int) {
         _agentState.value = AgentState.THINKING
         scope.launch {
-            val result: LlmResponse =
-                when (val r = MochiNativeBridge.generate(prompt)) {
-                    is Result.Success -> LlmResponse.Text(jobId, r.getOrThrow())
-                    is Result.Failure -> LlmResponse.Error(r.exceptionOrNull()?.message ?: "generation failed")
-                }
+            val result: LlmResponse = MochiNativeBridge.generate(prompt).fold(
+                onSuccess = { LlmResponse.Text(jobId, it) },
+                onFailure = { LlmResponse.Error(it.message ?: "generation failed") },
+            )
             _responses.value = result
             _agentState.value = AgentState.IDLE
         }

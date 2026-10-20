@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
  * Minimal REST client for the Mochi cloud backend. Kept as direct OkHttp calls
  * (no Retrofit) so the WebSocket + REST share one HTTP stack and auth flow.
  *
- * Endpoints mirror backend/app/routers/*:
+ * Endpoints mirror backend/app/routers/\*:
  *   POST /api/auth/register -> [TokenResponse]
  *   POST /api/auth/refresh  -> [TokenResponse]
  *   GET/POST /api/projects  -> [ProjectResponse]
