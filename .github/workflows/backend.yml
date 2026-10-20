@@ -26,5 +26,5 @@ jobs:
         run: ruff check app tests
       - name: Test (pytest)
         env:
-          MOCHI_DATABASE_URL: sqlite:///:memory:
+          MOCHI_DATABASE_URL: "sqlite:///:memory:"
         run: pytest -q app tests

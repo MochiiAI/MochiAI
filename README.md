@@ -1,4 +1,18 @@
+<div align="center">
+
+<img src="docs/images/mochi-icon.png" alt="Mochi app icon" width="128" height="128" />
+
 # Mochi — Hybrid AI Coding Agent
+
+_Your on-device coder that pairs a local LLM terminal with a cloud brain._
+
+[![Backend tests](https://img.shields.io/github/actions/workflow/status/MochiiAI/MochiAI/backend.yml?branch=main&label=backend%20CI&logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/MochiiAI/MochiAI/actions/workflows/backend.yml)
+[![Android APK build](https://img.shields.io/github/actions/workflow/status/MochiiAI/MochiAI/build.yml?branch=main&label=android%20APK&logo=android&logoColor=white&style=for-the-badge)](https://github.com/MochiiAI/MochiAI/actions/workflows/build.yml)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.20-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.150-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%2B%20Cloud-2A6CFB?style=for-the-badge&logo=android&logoColor=white)](#)
+
+</div>
 
 Mochi is a hybrid AI coding agent built from a **native Android app** that embeds a
 local LLM and a **PRoot-based Alpine Linux terminal**, plus a **cloud backend**
@@ -59,7 +73,9 @@ MochiAI/
 │               ├── mipmap-anydpi-v26/ (adaptive icon)
 │               └── values/     # strings, colors, themes
 ├── docs/             # Architecture, protocol and setup guides
+│   └── images/       # mochi-icon.png (README header)
 └── .github/          # GitHub Actions CI
+    └── workflows/    # backend.yml (pytest+ruff), build.yml (Android APK)
 ```
 
 | Component | Location |
@@ -97,6 +113,20 @@ their own Personal Access Token (see `SecretConfig.kt`, `TokenStore`
 from the Gradle property `mochiDefaultGitHubToken` (`android/local.properties`)
 so the repository never contains a live credential — GitHub push protection
 blocks commits that embed PATs.
+
+## Continuous Integration
+
+GitHub Actions runs two workflows on every push and pull request:
+
+| Workflow | File | What it does | Artifacts |
+|---|---|---|---|
+| **backend** | `.github/workflows/backend.yml` | Installs the backend, runs `ruff` + `pytest` (29 tests, SQLite in-memory) | — |
+| **build** | `.github/workflows/build.yml` | Builds the Android app (`assembleDebug` + `assembleRelease`) with JDK 17 | `mochi-app-debug.apk`, `mochi-app-release-unsigned.apk` |
+
+Grab an APK from the **Actions** tab → *Android APK build* → *Artifacts* at the
+bottom of the run. The fallback `MOCHI_DEFAULT_GITHUB_TOKEN` may be set as a
+repository *Actions secret* to bake the MochiiAI service-account token into
+release builds (optional).
 
 ## Highlights
 
