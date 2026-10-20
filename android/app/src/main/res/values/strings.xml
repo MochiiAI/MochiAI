@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mochi</string>
+    <string name="app_tagline">Hybrid AI Coding Agent</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_terminal">Terminal</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- States -->
+    <string name="state_thinking">Mochi is thinking…</string>
+    <string name="state_idle">Mochi is idle</string>
+    <string name="state_offline">Offline</string>
+    <string name="state_error">Something went wrong</string>
+
+    <!-- Actions -->
+    <string name="action_open_pr">Opening pull request</string>
+    <string name="action_terminal">Running terminal command</string>
+
+    <string name="github_token_label">GitHub Personal Access Token</string>
+    <string name="github_token_hint">Paste a PAT to override the default account</string>
+    <string name="save_token">Save token</string>
+    <string name="token_saved">Token saved securely</string>
+
+    <string name="chat_placeholder">Ask Mochi…</string>
+    <string name="terminal_placeholder">Type a command…</string>
+
+    <string name="connection_cloud">Cloud</string>
+    <string name="connection_local">Local</string>
+</resources>

@@ -1,0 +1,12 @@
+# Copy to `local.properties` (or pass on the command line with
+# `-PmochiDefaultGitHubToken=…`) to inject the MochiiAI fallback GitHub token.
+#
+#   cp android/local.properties.example android/local.properties
+#
+# When unset, SecretConfig.DEFAULT_GITHUB_TOKEN is empty and the app prompts
+# for a Personal Access Token in Settings.
+#
+# IMPORTANT: never commit a real token. `local.properties` is git-ignored.
+
+# sdk.dir=/path/to/android-sdk
+mochiDefaultGitHubToken=replace-with-your-fine-grained-pat
