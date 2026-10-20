@@ -1,0 +1,8 @@
+Mochi avatar animation assets live here: mochi_thinking.json,
+mochi_action.json, mochi_idle.json (Lottie) and mochi_coding.riv (Rive).
+
+These files are authored in After Effects / Rive and are not committed to git
+(.gitignore: res/raw/*.json + res/raw/*.riv). See docs/animation-assets.md.
+
+File-based resource names must be lowercase a-z, 0-9 or underscore, so this
+placeholder is a plain .txt file.

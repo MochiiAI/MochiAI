@@ -73,6 +73,7 @@ MochiAI/
 │               ├── mipmap-anydpi-v26/ (adaptive icon)
 │               └── values/     # strings, colors, themes
 ├── docs/             # Architecture, protocol and setup guides
+│   ├── animation-assets.md  # Lottie/Rive avatar asset spec + placeholder
 │   └── images/       # mochi-icon.png (README header)
 └── .github/          # GitHub Actions CI
     └── workflows/    # backend.yml (pytest+ruff), build.yml (Android APK)
